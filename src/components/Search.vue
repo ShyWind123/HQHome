@@ -2,29 +2,32 @@
   <div id="search-container">
     <i class="iconfont icon-jiantou_yemian_xiangxia_o hidden arrow down-arrow" @click="toggle()" ref="downArrow"></i>
     <i class="iconfont icon-jiantou_yemian_xiangshang arrow up-arrow" @click="toggle()" ref="upArrow"></i>
-    <div id="search-box" ref="searchBox">
-      <div id="search-engine-icon-container" class="frosted-glass">
-        <a-dropdown placement="bottom">
-          <i class="iconfont" :class="searchEngines.get(currentSearchEngine)?.icon" id="search-engine-icon"
-            @click="gotoWeb"></i>
-          <template #overlay>
-            <a-menu class="frosted-glass">
-              <template v-for="searchEngineItem in searchEngines">
-                <a-menu-item v-if="searchEngineItem[0] != currentSearchEngine" class="frosted-glass"
-                  @click="changeSearchEngine(searchEngineItem[0])">
-                  <i class="iconfont" :class="searchEngineItem[1].icon"></i>
-                </a-menu-item>
-              </template>
-            </a-menu>
-          </template>
-        </a-dropdown>
+    <transition enter-active-class="animate__animated animate__fadeInDown"
+      leave-active-class="animate__animated animate__fadeOutUp">
+      <div id="search-box" ref="searchBox" v-show="showSearchBox">
+        <div id="search-engine-icon-container" class="frosted-glass">
+          <a-dropdown placement="bottom">
+            <i class="iconfont" :class="searchEngines.get(currentSearchEngine)?.icon" id="search-engine-icon"
+              @click="gotoWeb"></i>
+            <template #overlay>
+              <a-menu class="frosted-glass">
+                <template v-for="searchEngineItem in searchEngines">
+                  <a-menu-item v-if="searchEngineItem[0] != currentSearchEngine" class="frosted-glass"
+                    @click="changeSearchEngine(searchEngineItem[0])">
+                    <i class="iconfont" :class="searchEngineItem[1].icon"></i>
+                  </a-menu-item>
+                </template>
+              </a-menu>
+            </template>
+          </a-dropdown>
+        </div>
+        <input :value="searchValue" placeholder="search here..." id="search-input" class="unselectable frosted-glass"
+          @keyup.enter="onSearch" @input="changeValue" />
+        <div id="search-icon-container" class="frosted-glass" @click="onSearch">
+          <i class="iconfont icon-search" id="search-icon"></i>
+        </div>
       </div>
-      <input :value="searchValue" placeholder="search here..." id="search-input" class="unselectable frosted-glass"
-        @keyup.enter="onSearch" @input="changeValue" />
-      <div id="search-icon-container" class="frosted-glass" @click="onSearch">
-        <i class="iconfont icon-search" id="search-icon"></i>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -36,13 +39,14 @@ const upArrow = ref()
 const downArrow = ref()
 const searchBox = ref()
 
+const showSearchBox = ref<boolean>(true)
 const currentSearchEngine = ref<string>("bing")
 const searchValue = ref<string>('');
 
 function toggle() {
   downArrow.value.classList.toggle("hidden")
   upArrow.value.classList.toggle("hidden")
-  searchBox.value.classList.toggle("hidden")
+  showSearchBox.value = !showSearchBox.value
 }
 
 function changeSearchEngine(selectedSearchEngine: string) {
@@ -69,20 +73,23 @@ function changeValue(e: any) {
   flex-direction: column;
   height: 100px;
   justify-content: space-between;
+  display: flex;
 }
 
 #search-box {
-  /* color: var(--primary-color); */
-  /* border: 1px solid #ccc; */
   height: 50px;
   width: 50vw;
+  margin: auto;
   border-radius: 10px;
   padding: 2px;
+  display: flex;
+  justify-content: center;
 }
 
 #search-engine-icon-container {
   width: 80px;
   border-radius: 10px 0 0 10px;
+  display: flex;
 }
 
 #search-engine-icon {
@@ -113,6 +120,7 @@ function changeValue(e: any) {
 #search-icon-container {
   width: 50px;
   border-radius: 0 10px 10px 0;
+  display: flex;
 }
 
 #search-icon {
