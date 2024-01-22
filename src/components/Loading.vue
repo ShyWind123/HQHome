@@ -18,7 +18,9 @@ const loaderMask = ref()
 
 document.addEventListener('readystatechange', function () {
   if (window.document.readyState === 'complete') {
-    loaderMask.value.classList.add("hidden")
+    setTimeout(() => {
+      loaderMask.value.classList.add("hidden")
+    }, 1000)
   }
 })
 

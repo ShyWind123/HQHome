@@ -2,8 +2,8 @@
   <Background></Background>
   <div id="main-container">
     <Search></Search>
-    <Log id="log-component"></Log>
   </div>
+  <Log id="log-component"></Log>
   <Loading></Loading>
 </template>
 
@@ -23,7 +23,7 @@ import Background from '../components/Background.vue';
 
 #log-component {
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
   margin: 5px;
 }
