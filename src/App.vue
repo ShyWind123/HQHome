@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="unselectable" draggable="false" oncontextmenu="return false;">
     <router-view></router-view>
   </div>
 </template>

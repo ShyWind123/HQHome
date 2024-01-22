@@ -22,7 +22,7 @@
 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
-import logs from '../../MyLogs/log'
+import logs from '../../public/myLogs/log'
 
 const open = ref<boolean>(false);
 
@@ -53,7 +53,7 @@ const showModal = () => {
 #log-container {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 10px;
-  margin: 50px;
+  margin: 30px;
   border-radius: 10px;
   background-color: var(--second-color);
   user-select: none;

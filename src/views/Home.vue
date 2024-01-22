@@ -1,27 +1,21 @@
 <template>
-  <img src="../../public/images/background.jpg" class="unselectable" draggable="false" oncontextmenu="return false;"
-    id="background-img">
+  <Background></Background>
   <div id="main-container">
     <Search></Search>
     <Log id="log-component"></Log>
   </div>
+  <Loading></Loading>
 </template>
 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
 import Search from '../components/Search.vue';
 import Log from '../components/Log.vue';
-
+import Loading from '../components/Loading.vue';
+import Background from '../components/Background.vue';
 </script>
 
 <style scoped>
-#background-img {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -1;
-}
-
 #main-container {
   width: 100vw;
   height: 100vh;

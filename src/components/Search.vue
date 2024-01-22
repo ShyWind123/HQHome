@@ -109,8 +109,13 @@ function changeValue(e: any) {
   flex: 1;
   border: none;
   color: var(--primary-color);
+  caret-color: var(--second-color);
   outline: none;
-  padding: 10px;
+  padding: 10px 20px;
+}
+
+#search-input::selection {
+  color: var(--second-color);
 }
 
 #search-input::placeholder {
@@ -136,11 +141,6 @@ function changeValue(e: any) {
 
 #search-icon:active {
   color: var(--second-color);
-}
-
-.hidden {
-  visibility: hidden;
-  position: absolute;
 }
 
 .arrow {
