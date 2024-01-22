@@ -6,7 +6,7 @@
 import { ref, reactive, onMounted } from 'vue'
 
 const bgNum = 6
-const bgPath = '../../public/backgrounds/background' + Math.floor(Math.random() * bgNum + 1) + '.jpg'
+const bgPath = '/public/backgrounds/background' + Math.floor(Math.random() * bgNum + 1) + '.jpg'
 
 </script>
 
