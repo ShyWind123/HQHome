@@ -1,34 +1,32 @@
 <template>
-  <div id="search-box-container">
-    <div id="search-box">
-      <div id="search-engine-icon-container" class="frosted-glass">
-        <a-dropdown placement="bottom">
-          <i class="iconfont" :class="searchEngines.get(currentSearchEngine)?.icon" id="search-engine-icon"
-            @click="gotoWeb"></i>
-          <template #overlay>
-            <a-menu class="frosted-glass">
-              <template v-for="searchEngineItem in searchEngines">
-                <a-menu-item v-if="searchEngineItem[0] != currentSearchEngine" class="frosted-glass"
-                  @click="changeSearchEngine(searchEngineItem[0])">
-                  <i class="iconfont" :class="searchEngineItem[1].icon"></i>
-                </a-menu-item>
-              </template>
-            </a-menu>
-          </template>
-        </a-dropdown>
+  <div id="search-box">
+    <div id="search-engine-icon-container" class="frosted-glass">
+      <a-dropdown placement="bottom">
+        <i class="iconfont" :class="searchEngines.get(currentSearchEngine)?.icon" id="search-engine-icon"
+          @click="gotoWeb"></i>
+        <template #overlay>
+          <a-menu class="frosted-glass">
+            <template v-for="searchEngineItem in searchEngines">
+              <a-menu-item v-if="searchEngineItem[0] != currentSearchEngine" class="frosted-glass"
+                @click="changeSearchEngine(searchEngineItem[0])">
+                <i class="iconfont" :class="searchEngineItem[1].icon"></i>
+              </a-menu-item>
+            </template>
+          </a-menu>
+        </template>
+      </a-dropdown>
+    </div>
+    <div id="search-input-container" class=" frosted-glass">
+      <input :value="searchValue" id="search-input" class="unselectable" @keyup.enter="onSearch" @input="changeValue" />
+    </div>
+    <div id="search-icon-container" class="frosted-glass" @click="onSearch">
+      <i class="iconfont icon-search" id="search-icon"></i>
+    </div>
+    <div id="toggleToHitokoto-container" @click="toggleSearchHitokoto">
+      <div id="toggleToHitokoto-icon" class="frosted-glass-dark">
+        <i class="iconfont icon-youbian-tianchong"></i>
       </div>
-      <div id="search-input-container" class=" frosted-glass">
-        <input :value="searchValue" id="search-input" class="unselectable" @keyup.enter="onSearch" @input="changeValue" />
-      </div>
-      <div id="search-icon-container" class="frosted-glass" @click="onSearch">
-        <i class="iconfont icon-search" id="search-icon"></i>
-      </div>
-      <div id="toggleToHitokoto-container" @click="toggleSearchHitokoto">
-        <div id="toggleToHitokoto-icon" class="frosted-glass-dark">
-          <i class="iconfont icon-youbian-tianchong"></i>
-        </div>
 
-      </div>
     </div>
   </div>
 </template>
@@ -66,13 +64,7 @@ const changeValue = (e: any) => {
 </script>
 
 <style scoped>
-#search-box-container {
-  display: flex;
-}
-
 #search-box {
-  position: absolute;
-  left: 50vw;
   height: 50px;
   width: 50vw;
   margin: auto;
@@ -80,7 +72,6 @@ const changeValue = (e: any) => {
   padding: 2px;
   display: flex;
   justify-content: center;
-  transform: translateX(-50%);
 }
 
 #search-engine-icon-container {
@@ -167,5 +158,11 @@ const changeValue = (e: any) => {
 
 #toggleToHitokoto-icon:hover {
   color: var(--second-color);
+}
+
+@media (max-width: 1000px) {
+  #search-box {
+    width: 80vw;
+  }
 }
 </style>

@@ -1,23 +1,24 @@
 <template>
   <div>
-    <div class="hitokoto-container frosted-glass-dark" ref="hitokotoContainer">
-      <div class="hitokoto-menu">
-        <div class="hitokoto-return" @click="toggleSearchHitokoto">
-          <i class="iconfont icon-fanhui"></i>
-        </div>
-        <!-- <div class="hitokoto-hide" @click="hideHitokoto">
+    <div class="hitokoto-container-outer">
+      <div class="hitokoto-container frosted-glass-dark" ref="hitokotoContainer">
+        <div class="hitokoto-menu">
+          <div class="hitokoto-return" @click="toggleSearchHitokoto">
+            <i class="iconfont icon-fanhui"></i>
+          </div>
+          <!-- <div class="hitokoto-hide" @click="hideHitokoto">
           <i class="iconfont icon-window-min-full"></i>
         </div> -->
-      </div>
-      <div class="hitokoto-content">
-        {{ `「 ${hitokotoData.content} 」` }}
-      </div>
-      <div>
-        <div class="hitokoto-from">
-          {{ `-- 「 ${hitokotoData.from} 」` }}
+        </div>
+        <div class="hitokoto-content">
+          {{ `「 ${hitokotoData.content} 」` }}
+        </div>
+        <div>
+          <div class="hitokoto-from">
+            {{ `-- 「 ${hitokotoData.from} 」` }}
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -44,13 +45,13 @@ const getHitokotoData = async () => {
   hitokotoData.from = result.from
 }
 
-const hideHitokoto = () => {
-  hitokotoContainer.value.classList.add("hidden")
-}
-
 </script>
 
 <style scoped>
+.hitokoto-container-outer {
+  display: flex;
+}
+
 .hitokoto-container {
   position: relative;
   display: flex;

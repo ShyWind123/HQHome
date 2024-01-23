@@ -5,17 +5,10 @@
     <transition enter-active-class="animate__animated animate__fadeInDown"
       leave-active-class="animate__animated animate__fadeOutUp">
       <div id="search-and-hitokoto" v-if="isShow">
-        <transition enter-active-class="animate__animated animate__flipInY animate__delay-1s"
-          leave-active-class="animate__animated animate__flipOutY">
-          <!-- <transition enter-active-class="animate__animated animate__slideInRight"
-          leave-active-class="animate__animated animate__slideOutRight"> -->
+        <transition enter-active-class="animate__animated animate__flipInY"
+          leave-active-class="animate__animated animate__flipOutY" mode="out-in">
           <Search v-if="isSearchShow"></Search>
-        </transition>
-        <transition enter-active-class="animate__animated animate__flipInY animate__delay-1s"
-          leave-active-class="animate__animated animate__flipOutY">
-          <!-- <transition enter-active-class="animate__animated animate__slideInLeft"
-          leave-active-class="animate__animated animate__slideOutLeft"> -->
-          <Hitokoto id="hitokoto-component" v-if="isHitokotoShow"></Hitokoto>
+          <Hitokoto v-else></Hitokoto>
         </transition>
       </div>
     </transition>
@@ -36,18 +29,13 @@ import ShowHide from '../components/ShowHide.vue';
 import { getGlobalStore } from '../store/store'
 
 const globalStore = getGlobalStore()
-const { isSearchShow, isHitokotoShow, isShow } = storeToRefs(globalStore)
+const { isSearchShow, isShow } = storeToRefs(globalStore)
 </script>
 
 <style scoped>
 #main-container {
   width: 100vw;
   height: 100vh;
-}
-
-#hitokoto-component {
-  margin: 20px;
-  display: flex;
 }
 
 #log-component {

@@ -19,6 +19,11 @@ const logs = [
     "content": ["添加一言"],
     "data": "2024/1/23"
   },
+  {
+    "version": "0.4.1",
+    "content": ["修复了一些问题"],
+    "data": "2024/1/23"
+  },
 ]
 
 export default logs 
