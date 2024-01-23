@@ -2,6 +2,8 @@
   --primary-color: #CCFFFF;
   --second-color: #FFCCCC;
   --third-color: #FFFFCC;
+  --frosted-glass-color: rgba(255, 255, 255, 0.2);
+  --frosted-glass-color-dark: rgba(80, 80, 80, 0.2);
 }
 
 html,
@@ -41,7 +43,14 @@ div {
 }
 
 .frosted-glass {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--frosted-glass-color);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.frosted-glass-dark {
+  background: var(--frosted-glass-color-dark);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);

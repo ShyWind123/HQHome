@@ -6,6 +6,8 @@ import 'animate.css';
 import App from './App.vue'
 import router from '../router/router.js'
 import Antd from 'ant-design-vue'
+import { createPinia } from 'pinia'
 
+const pinia = createPinia()
 
-createApp(App).use(router).use(Antd).mount('#app')
+createApp(App).use(router).use(Antd).use(pinia).mount('#app')

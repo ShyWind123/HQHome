@@ -14,6 +14,11 @@ const logs = [
     "content": ["搜索框样式调整", "添加加载中效果", "添加更多背景图片"],
     "data": "2024/1/22"
   },
+  {
+    "version": "0.4.0",
+    "content": ["添加一言"],
+    "data": "2024/1/23"
+  },
 ]
 
 export default logs 
