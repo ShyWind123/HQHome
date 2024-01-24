@@ -24,6 +24,11 @@ const logs = [
     "content": ["修复了一些问题"],
     "data": "2024/1/23"
   },
+  {
+    "version": "0.4.2",
+    "content": ["更换了网页的字体（得意黑）", "修改部分样式"],
+    "data": "2024/1/24"
+  },
 ]
 
 export default logs 

@@ -6,6 +6,12 @@
   --frosted-glass-color-dark: rgba(80, 80, 80, 0.2);
 }
 
+@font-face {
+  font-family: "Smiley Sans";
+  src:
+    url("../style/fonts/SmileySans-Oblique.otf.woff2") format("woff2"),
+}
+
 html,
 body {
   margin: 0;
@@ -13,6 +19,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-family: "Smiley Sans", serif;
 }
 
 #app {

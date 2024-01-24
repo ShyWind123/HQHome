@@ -57,6 +57,7 @@ const showModal = () => {
   border-radius: 10px;
   background-color: var(--second-color);
   user-select: none;
+  font-family: "Smiley Sans", serif;
 }
 
 #log-version {

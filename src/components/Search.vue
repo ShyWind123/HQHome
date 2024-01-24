@@ -106,6 +106,7 @@ const changeValue = (e: any) => {
   outline: none;
   padding: 15px;
   background: rgba(0, 0, 0, 0);
+  font-family: "PingFang SC", serif;
 }
 
 #search-input::selection {
@@ -162,7 +163,7 @@ const changeValue = (e: any) => {
 
 @media (max-width: 1000px) {
   #search-box {
-    width: 80vw;
+    width: 90vw;
   }
 }
 </style>
