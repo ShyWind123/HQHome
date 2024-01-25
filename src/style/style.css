@@ -67,3 +67,7 @@ div {
   visibility: hidden;
   position: absolute;
 }
+
+.flex {
+  display: flex;
+}

@@ -17,7 +17,8 @@
       </a-dropdown>
     </div>
     <div id="search-input-container" class=" frosted-glass">
-      <input :value="searchValue" id="search-input" class="unselectable" @keyup.enter="onSearch" @input="changeValue" />
+      <input :value="searchValue" :placeholder="currentHoverWeb" id="search-input" class="unselectable"
+        @keyup.enter="onSearch" @input="changeValue" />
     </div>
     <div id="search-icon-container" class="frosted-glass" @click="onSearch">
       <i class="iconfont icon-search" id="search-icon"></i>
@@ -35,10 +36,11 @@
 import { ref, reactive, onMounted } from 'vue'
 import searchEngines from "../../public/other/searchEngines"
 import { getGlobalStore } from '../store/store'
-
+import { storeToRefs } from 'pinia';
 
 const globalStore = getGlobalStore()
 const { toggleSearchHitokoto } = globalStore
+const { currentHoverWeb } = storeToRefs(globalStore)
 
 const currentSearchEngine = ref<string>("bing")
 const searchValue = ref<string>('');
@@ -106,7 +108,8 @@ const changeValue = (e: any) => {
   outline: none;
   padding: 15px;
   background: rgba(0, 0, 0, 0);
-  font-family: "PingFang SC", serif;
+  /* font-family: "PingFang SC", serif; */
+  font-family: "Smiley Sans", serif;
 }
 
 #search-input::selection {

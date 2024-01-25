@@ -4,14 +4,19 @@
     <ShowHide></ShowHide>
     <transition enter-active-class="animate__animated animate__fadeInDown"
       leave-active-class="animate__animated animate__fadeOutUp">
-      <div id="search-and-hitokoto" v-if="isShow">
+      <div v-if="isShow">
         <transition enter-active-class="animate__animated animate__flipInY"
           leave-active-class="animate__animated animate__flipOutY" mode="out-in">
-          <Search v-if="isSearchShow"></Search>
+          <div class="search-links-container" v-if="isSearchShow">
+            <Search></Search>
+            <Links></Links>
+          </div>
+
           <Hitokoto v-else></Hitokoto>
         </transition>
       </div>
     </transition>
+
   </div>
   <Log id="log-component"></Log>
   <Loading></Loading>
@@ -26,6 +31,7 @@ import Loading from '../components/Loading.vue';
 import Background from '../components/Background.vue';
 import Hitokoto from '../components/Hitokoto.vue';
 import ShowHide from '../components/ShowHide.vue';
+import Links from '../components/Links.vue';
 import { getGlobalStore } from '../store/store'
 
 const globalStore = getGlobalStore()
@@ -43,5 +49,10 @@ const { isSearchShow, isShow } = storeToRefs(globalStore)
   bottom: 0;
   right: 0;
   margin: 5px;
+}
+
+.search-links-container {
+  display: flex;
+  flex-direction: column;
 }
 </style>
