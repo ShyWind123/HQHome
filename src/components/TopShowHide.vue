@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div id="show-hide-container" v-if="isHide">
-      <i class="iconfont icon-jiantou_yemian_xiangxia_o arrow down-arrow" @click="toggleHideShow"></i>
+    <div id="show-hide-container" v-if="isTopHide">
+      <i class="iconfont icon-jiantou_yemian_xiangxia_o arrow down-arrow" @click="toggleTopHideShow"></i>
     </div>
     <div id="show-hide-container" v-else>
-      <i class="iconfont icon-jiantou_yemian_xiangshang arrow up-arrow" @click="toggleHideShow"></i>
+      <i class="iconfont icon-jiantou_yemian_xiangshang arrow up-arrow" @click="toggleTopHideShow"></i>
     </div>
   </div>
 </template>
@@ -15,8 +15,8 @@ import { getGlobalStore } from '../store/store'
 import { storeToRefs } from 'pinia'
 
 const globalStore = getGlobalStore()
-const { isHide, isShow } = storeToRefs(globalStore)
-const { toggleHideShow } = globalStore
+const { isTopHide, isTopShow } = storeToRefs(globalStore)
+const { toggleTopHideShow } = globalStore
 
 
 </script>

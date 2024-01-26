@@ -1,4 +1,4 @@
-export const linksURL = [
+[
   {
     "name": "哔哩哔哩 bilibili",
     "icon": "icon-bilibili-fill",

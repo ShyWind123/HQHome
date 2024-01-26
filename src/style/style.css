@@ -9,7 +9,13 @@
 @font-face {
   font-family: "Smiley Sans";
   src:
-    url("../style/fonts/SmileySans-Oblique.otf.woff2") format("woff2"),
+    url("../style/fonts/SmileySans-Oblique.ttf.woff2") format("woff2"),
+}
+
+@font-face {
+  font-family: "Digital7";
+  src:
+    url("../style/fonts/digital-7.ttf"),
 }
 
 html,

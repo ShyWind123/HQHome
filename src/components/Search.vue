@@ -2,14 +2,13 @@
   <div id="search-box">
     <div id="search-engine-icon-container" class="frosted-glass">
       <a-dropdown placement="bottom">
-        <i class="iconfont" :class="searchEngines.get(currentSearchEngine)?.icon" id="search-engine-icon"
-          @click="gotoWeb"></i>
+        <i class="iconfont" :class="currentSearchEngineInfo.icon" id="search-engine-icon" @click="gotoWeb"></i>
         <template #overlay>
           <a-menu class="frosted-glass">
             <template v-for="searchEngineItem in searchEngines">
-              <a-menu-item v-if="searchEngineItem[0] != currentSearchEngine" class="frosted-glass"
-                @click="changeSearchEngine(searchEngineItem[0])">
-                <i class="iconfont" :class="searchEngineItem[1].icon"></i>
+              <a-menu-item v-if="searchEngineItem.name != currentSearchEngine" class="frosted-glass"
+                @click="changeSearchEngine(searchEngineItem)">
+                <i class="iconfont" :class="searchEngineItem.icon"></i>
               </a-menu-item>
             </template>
           </a-menu>
@@ -34,7 +33,7 @@
 
 <script setup lang='ts'>
 import { ref, reactive, onMounted } from 'vue'
-import searchEngines from "../../public/other/searchEngines"
+import searchEngines from "../assets/searchEngines.json"
 import { getGlobalStore } from '../store/store'
 import { storeToRefs } from 'pinia';
 
@@ -43,25 +42,42 @@ const { toggleSearchHitokoto } = globalStore
 const { currentHoverWeb } = storeToRefs(globalStore)
 
 const currentSearchEngine = ref<string>("bing")
+const currentSearchEngineInfo = reactive({ icon: "", url: "", search: "" })
 const searchValue = ref<string>('');
 
-const changeSearchEngine = (selectedSearchEngine: string) => {
-  currentSearchEngine.value = selectedSearchEngine
+const getCurrentSearchEngineInfo = () => {
+  for (let item of searchEngines) {
+    if (item.name === currentSearchEngine.value) {
+      currentSearchEngineInfo.icon = item.icon
+      currentSearchEngineInfo.url = item.url
+      currentSearchEngineInfo.search = item.search
+      break
+    }
+  }
+}
+
+const changeSearchEngine = (selectedSearchEngine: any) => {
+  currentSearchEngine.value = selectedSearchEngine.name
+  getCurrentSearchEngineInfo()
 }
 
 const gotoWeb = () => {
-  window.open(searchEngines.get(currentSearchEngine.value)?.url, '_blank')
+  window.open(currentSearchEngineInfo.url, '_blank')
 }
 
 const onSearch = () => {
   if (searchValue.value != "") {
-    window.open(searchEngines.get(currentSearchEngine.value)?.search + searchValue.value, '_blank')
+    window.open(currentSearchEngineInfo.search + searchValue.value, '_blank')
   }
 }
 
 const changeValue = (e: any) => {
   searchValue.value = e.target.value
 }
+
+onMounted(() => {
+  getCurrentSearchEngineInfo()
+})
 
 </script>
 

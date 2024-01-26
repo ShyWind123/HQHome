@@ -22,7 +22,7 @@
 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
-import logs from '../../public/myLogs/log'
+import logs from '../assets/log.json'
 
 const open = ref<boolean>(false);
 

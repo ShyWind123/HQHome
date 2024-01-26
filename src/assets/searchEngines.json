@@ -1,0 +1,26 @@
+[
+  {
+    "name": "bing",
+    "icon": "icon-Bing",
+    "url": "https://cn.bing.com/?mkt=zh-CN&mkt=zh-CN",
+    "search": "https://www.bing.com/search?q="
+  },
+  {
+    "name": "baidu",
+    "icon": "icon-baidu1",
+    "url": "https://www8.baidu.com/",
+    "search": "https://www.baidu.com/s?wd="
+  },
+  {
+    "name": "google",
+    "icon": "icon-Google",
+    "url": "https://www.google.com/",
+    "search": "https://www.google.com/search?q="
+  },
+  {
+    "name": "bilibili",
+    "icon": "icon-bilibili",
+    "url": "https://www.bilibili.com/",
+    "search": "https://search.bilibili.com/all?keyword="
+  }
+]

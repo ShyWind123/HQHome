@@ -2,6 +2,13 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 export const getGlobalStore = defineStore('global', () => {
+  const isGlobalShow = ref<boolean>(true)
+  const isGlobalHide = ref<boolean>(false)
+  function toggleGlobalHideShow() {
+    isGlobalHide.value = !isGlobalHide.value
+    isGlobalShow.value = !isGlobalShow.value
+  }
+
   const isSearchShow = ref<boolean>(true)
   const isHitokotoShow = ref<boolean>(false)
   function toggleSearchHitokoto() {
@@ -9,11 +16,11 @@ export const getGlobalStore = defineStore('global', () => {
     isHitokotoShow.value = !isHitokotoShow.value
   }
 
-  const isHide = ref<boolean>(false)
-  const isShow = ref<boolean>(true)
-  function toggleHideShow() {
-    isHide.value = !isHide.value
-    isShow.value = !isShow.value
+  const isTopHide = ref<boolean>(false)
+  const isTopShow = ref<boolean>(true)
+  function toggleTopHideShow() {
+    isTopHide.value = !isTopHide.value
+    isTopShow.value = !isTopShow.value
   }
 
   const currentHoverWeb = ref<string>("")
@@ -22,8 +29,9 @@ export const getGlobalStore = defineStore('global', () => {
   }
 
   return {
+    isGlobalHide, isGlobalShow, toggleGlobalHideShow,
     isSearchShow, isHitokotoShow, toggleSearchHitokoto,
-    isHide, isShow, toggleHideShow,
+    isTopHide, isTopShow, toggleTopHideShow,
     currentHoverWeb, changeHoverWeb
   }
 })

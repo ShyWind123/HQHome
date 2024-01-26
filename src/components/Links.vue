@@ -9,14 +9,14 @@
 
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
-import { linksURL } from '../../public/other/linksURL.ts'
+import linksURL from '../assets/linksURL.json'
 import { getGlobalStore } from '../store/store'
 
 const globalStore = getGlobalStore()
 const { changeHoverWeb } = globalStore
 
 const goToURL = (item: any) => {
-  window.open(item.url, '_blank')
+  window.open(item.url, '_self')
 }
 
 const hoverWeb = (item: any) => {
@@ -61,5 +61,11 @@ const hoverWeb = (item: any) => {
   font-size: 25px;
   margin: auto;
   /* color: var(--primary-color); */
+}
+
+@media (max-width: 500px) {
+  #Links-container {
+    width: 90vw;
+  }
 }
 </style>
