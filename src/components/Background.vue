@@ -5,7 +5,7 @@
 <script setup lang='ts'>
 import { ref, reactive, onMounted } from 'vue'
 
-const bgNum = 8
+const bgNum = 6
 const bgURL = `/backgrounds/background${Math.floor(Math.random() * bgNum + 1)}.jpg`
 
 </script>

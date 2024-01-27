@@ -16,12 +16,16 @@
               <Search></Search>
               <Links></Links>
             </div>
-            <Hitokoto v-else></Hitokoto>
+            <Hitokoto v-else-if="isHitokotoShow"></Hitokoto>
           </transition>
         </div>
       </transition>
-      <div class="time-weather-container-outer">
-        <TimeWeather></TimeWeather>
+      <div class="weather-capsule-container">
+        <transition name="weather-capsule-toggle" enter-active-class="animate__animated animate__flipInX"
+          leave-active-class="animate__animated animate__flipOutX" mode="out-in">
+          <TimeWeather v-if="isTimeWeatherShow" @click="toggleWeatherCapsule"></TimeWeather>
+          <TimeCapsule v-else-if="isTimeCapsuleShow"></TimeCapsule>
+        </transition>
       </div>
       <!-- <div class="webs-container-outer">
         <Webs></Webs>
@@ -44,12 +48,14 @@ import Hitokoto from '../components/Hitokoto.vue';
 import TopShowHide from '../components/TopShowHide.vue';
 import Links from '../components/Links.vue';
 import TimeWeather from '../components/TimeWeather.vue';
+import TimeCapsule from '../components/TimeCapsule.vue';
 import Webs from '../components/Webs.vue'
 import GlobalShowHide from '../components/GlobalShowHide.vue';
 import { getGlobalStore } from '../store/store'
 
 const globalStore = getGlobalStore()
-const { isSearchShow, isTopShow, isGlobalShow } = storeToRefs(globalStore)
+const { isSearchShow, isHitokotoShow, isTopShow, isGlobalShow, isTimeWeatherShow, isTimeCapsuleShow } = storeToRefs(globalStore)
+const { toggleWeatherCapsule } = globalStore
 </script>
 
 <style scoped>
@@ -76,7 +82,7 @@ const { isSearchShow, isTopShow, isGlobalShow } = storeToRefs(globalStore)
   flex-direction: column;
 }
 
-.time-weather-container-outer {
+.weather-capsule-container {
   position: absolute;
   left: 50vw;
   top: 55vh;

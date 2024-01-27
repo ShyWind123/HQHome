@@ -1,7 +1,7 @@
 <template>
   <div id="Links-container">
-    <div id="Links-icon-container" v-for="(item, index) in linksURL" @click="goToURL(item)" @mouseover="hoverWeb(item)"
-      @mouseleave="changeHoverWeb('')">
+    <div id="Links-icon-container" v-for="(item, index) in linksURL" @click="goToURL(item)" @mouseover="hoverLink(item)"
+      @mouseleave="changeSearchShowContent('')">
       <i class="iconfont" :class="item.icon" id="Links-icon"></i>
     </div>
   </div>
@@ -13,20 +13,20 @@ import linksURL from '../assets/linksURL.json'
 import { getGlobalStore } from '../store/store'
 
 const globalStore = getGlobalStore()
-const { changeHoverWeb } = globalStore
+const { changeSearchShowContent } = globalStore
 
 const goToURL = (item: any) => {
   window.open(item.url, '_self')
 }
 
-const hoverWeb = (item: any) => {
-  changeHoverWeb(item.name)
+const hoverLink = (item: any) => {
+  changeSearchShowContent(item.name)
 }
 </script>
 
 <style scoped>
 #Links-container {
-  width: 400px;
+  width: 450px;
   display: flex;
   justify-content: space-around;
   border-radius: 5px;
@@ -35,9 +35,9 @@ const hoverWeb = (item: any) => {
 }
 
 #Links-icon-container {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
+  width: 45px;
+  height: 45px;
+  margin: 10px;
   display: flex;
   border-radius: 5px;
   background: var(--frosted-glass-color);
@@ -58,7 +58,7 @@ const hoverWeb = (item: any) => {
 }
 
 #Links-icon {
-  font-size: 25px;
+  font-size: 30px;
   margin: auto;
   /* color: var(--primary-color); */
 }

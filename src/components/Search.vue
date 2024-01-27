@@ -16,7 +16,7 @@
       </a-dropdown>
     </div>
     <div id="search-input-container" class=" frosted-glass">
-      <input :value="searchValue" :placeholder="currentHoverWeb" id="search-input" class="unselectable"
+      <input :value="searchValue" :placeholder="currentSeachShowContent" id="search-input" class="unselectable"
         @keyup.enter="onSearch" @input="changeValue" />
     </div>
     <div id="search-icon-container" class="frosted-glass" @click="onSearch">
@@ -39,7 +39,7 @@ import { storeToRefs } from 'pinia';
 
 const globalStore = getGlobalStore()
 const { toggleSearchHitokoto } = globalStore
-const { currentHoverWeb } = storeToRefs(globalStore)
+const { currentSeachShowContent } = storeToRefs(globalStore)
 
 const currentSearchEngine = ref<string>("bing")
 const currentSearchEngineInfo = reactive({ icon: "", url: "", search: "" })
