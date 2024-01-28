@@ -27,9 +27,9 @@
           <TimeCapsule v-else-if="isTimeCapsuleShow"></TimeCapsule>
         </transition>
       </div>
-      <!-- <div class="webs-container-outer">
+      <div class="webs-container-outer">
         <Webs></Webs>
-      </div> -->
+      </div>
       <Log id="log-component"></Log>
     </div>
   </transition>
@@ -91,6 +91,9 @@ const { toggleWeatherCapsule } = globalStore
 
 .webs-container-outer {
   display: flex;
-  margin: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 50vw;
+  transform: translateX(-50%);
 }
 </style>

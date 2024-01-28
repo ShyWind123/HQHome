@@ -1,0 +1,20 @@
+[
+  {
+    "idx": 0,
+    "name": "博客HQBlog",
+    "url": "a",
+    "icon": "icon-lujing911"
+  },
+  {
+    "idx": 1,
+    "name": "网盘HQNetDisk",
+    "url": "a",
+    "icon": "icon-wodewangpan"
+  },
+  {
+    "idx": 2,
+    "name": "聊天HQChat",
+    "url": "a",
+    "icon": "icon-liaotian"
+  }
+]

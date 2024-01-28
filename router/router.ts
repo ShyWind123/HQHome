@@ -1,22 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../src/views/Home.vue"
+import { RouterOptions } from "vue-router";
 
-const routes = [
-  {
-    path: '/',
-    redirect: '/MyHome'
-  },
-  {
-    path: '/MyHome',
-    name: 'Home',
-    component: Home
-  }
-]
 
-const router = createRouter({
+const routerConfig: RouterOptions = {
   history: createWebHistory(),
-  routes
-})
+  routes: [
+    {
+      path: '/',
+      redirect: '/HQHome'
+    },
+    {
+      path: '/HQHome',
+      name: 'Home',
+      component: Home
+    }
+  ]
+}
+
+const router = createRouter(routerConfig)
 
 export default router

@@ -31,6 +31,13 @@ export const getGlobalStore = defineStore('global', () => {
     isTopShow.value = !isTopShow.value
   }
 
+  const isBottomHide = ref<boolean>(true)
+  const isBottomShow = ref<boolean>(false)
+  function toggleBottomHideShow() {
+    isBottomHide.value = !isBottomHide.value
+    isBottomShow.value = !isBottomShow.value
+  }
+
   const currentSeachShowContent = ref<string>("")
   function changeSearchShowContent(newContent: string) {
     currentSeachShowContent.value = newContent
@@ -54,6 +61,7 @@ export const getGlobalStore = defineStore('global', () => {
     isGlobalHide, isGlobalShow, toggleGlobalHideShow,
     isSearchShow, isHitokotoShow, toggleSearchHitokoto,
     isTopHide, isTopShow, toggleTopHideShow,
+    isBottomHide, isBottomShow, toggleBottomHideShow,
     isTimeWeatherShow, isTimeCapsuleShow, toggleWeatherCapsule,
     currentSeachShowContent, changeSearchShowContent,
     currentDate, updateTime
