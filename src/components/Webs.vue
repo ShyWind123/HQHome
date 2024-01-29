@@ -183,7 +183,7 @@ const nextPage = () => {
 
   #one-web-container {
     padding: 5px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 2px;
   }
 
