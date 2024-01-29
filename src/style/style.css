@@ -15,7 +15,7 @@
 @font-face {
   font-family: "Digital7";
   src:
-    url("../style/fonts/digital-7.ttf"),
+    url("../style/fonts/digital-7.ttf") format("truetype"),
 }
 
 html,

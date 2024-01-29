@@ -164,7 +164,8 @@ const nextPage = () => {
 @media (max-width:500px) {
   #webs-title-container {
     margin: auto;
-    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   #webs-title-icon {
@@ -173,6 +174,11 @@ const nextPage = () => {
 
   #webs-title-content {
     font-size: 15px;
+  }
+
+  #webs-container-inner {
+    display: flex;
+    flex-direction: column;
   }
 
   #one-web-container {
@@ -196,7 +202,7 @@ const nextPage = () => {
   }
 
   #arrow-icon {
-    font-size: 10px;
+    font-size: 15px;
     margin: auto;
   }
 }
