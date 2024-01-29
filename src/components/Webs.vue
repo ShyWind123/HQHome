@@ -97,6 +97,10 @@ const nextPage = () => {
   margin: auto;
 }
 
+#webs-hide-icon:hover {
+  color: var(--second-color);
+}
+
 #webs-container-inner {
   border-radius: 10px 10px 0 0;
   display: flex;
@@ -115,10 +119,12 @@ const nextPage = () => {
 
 #webs-title-icon {
   font-size: 25px;
+  color: var(--primary-color);
 }
 
 #webs-title-content {
   font-size: 25px;
+  color: var(--primary-color);
 }
 
 #webs-content-container {
@@ -141,7 +147,6 @@ const nextPage = () => {
 }
 
 #one-web-text {
-  color: var(--primary-color);
   font-size: 25px;
   margin: 5px;
 }

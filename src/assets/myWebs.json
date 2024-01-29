@@ -1,17 +1,17 @@
 [
   {
     "name": "博客HQBlog",
-    "url": "a",
+    "url": "http://8.134.215.31:1001",
     "icon": "icon-lujing911"
   },
   {
     "name": "网盘HQNetDisk",
-    "url": "a",
+    "url": "http://8.134.215.31:1002",
     "icon": "icon-wodewangpan"
   },
   {
     "name": "聊天HQChat",
-    "url": "a",
+    "url": "http://8.134.215.31:1003",
     "icon": "icon-liaotian"
   }
 ]
