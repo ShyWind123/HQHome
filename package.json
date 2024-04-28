@@ -1,7 +1,7 @@
 {
   "name": "myhome",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port 1000",
@@ -11,6 +11,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "ant-design-vue": "^4.1.1",
+    "axios": "^1.6.8",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
