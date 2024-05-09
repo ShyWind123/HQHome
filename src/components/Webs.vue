@@ -13,7 +13,7 @@
           <i id="arrow-icon" class="iconfont icon-icon-arrow-left2"></i>
         </div>
         <div v-for="item in currentWebs" id="one-web-container" @click="goToWeb(item)" class="frosted-glass-dark">
-          <i class="iconfont" :class="item.icon" id="one-web-icon"></i>
+          <!-- <i class="iconfont" :class="item.icon" id="one-web-icon"></i> -->
           <span id="one-web-text">{{ item.name }}</span>
         </div>
         <div id="arrow-icon-container" class="frosted-glass-dark" @click="nextPage">

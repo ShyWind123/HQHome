@@ -1,7 +1,18 @@
 [
   {
-    "name": "博客HQBlog",
-    "url": "http://8.134.215.31:1001",
-    "icon": "icon-lujing911"
+    "name": "HQBlog",
+    "url": "http://8.134.215.31:1001"
+  },
+  {
+    "name": "AreaChartRevisited",
+    "url": "http://8.134.215.31:9999"
+  },
+  {
+    "name": "RoamTouring",
+    "url": "http://8.134.215.31:11111"
+  },
+  {
+    "name": "金融征信",
+    "url": "http://8.134.215.31:1234"
   }
 ]
