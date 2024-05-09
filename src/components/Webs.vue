@@ -4,10 +4,6 @@
       <i class="iconfont icon-shang" id="webs-hide-icon"></i>
     </div>
     <div id="webs-container-inner" class="frosted-glass" v-if="isBottomShow">
-      <div id="webs-title-container">
-        <i class="iconfont icon-web" id="webs-title-icon"></i>
-        <span id="webs-title-content">其他网站</span>
-      </div>
       <div id="webs-content-container" :key="refreshKey">
         <div id="arrow-icon-container" class="frosted-glass-dark" @click="prePage">
           <i id="arrow-icon" class="iconfont icon-icon-arrow-left2"></i>
