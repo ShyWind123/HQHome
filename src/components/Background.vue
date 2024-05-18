@@ -4,7 +4,7 @@
 
 <script setup lang='ts'>
 import { ref, reactive, onMounted } from 'vue'
-const url = 'https://api.oneneko.com/v1/bing_today'
+const url = 'https://bing.img.run/uhd.php'
 </script>
 
 <style scoped>
